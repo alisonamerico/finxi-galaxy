@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 """
 A model is the single, definitive source of information about your data.
@@ -12,7 +13,7 @@ class Anunciante(models.Model):
     """
     This class contains the representation of the fields in the Anunciante table.
     """
-    name = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15)
     email = models.EmailField(max_length=254)
 
@@ -26,7 +27,7 @@ class Anunciante(models.Model):
 
     def __str__(self):
         """A string representation of the model."""
-        return self.name
+        return str(self.name)
 
 
 class DemandaDePecas(models.Model):
