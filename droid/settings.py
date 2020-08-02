@@ -30,8 +30,8 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-# Tells the framework which will be the default class used as a user
-AUTH_USER_MODEL = 'base.User'
+# # Tells the framework which will be the default class used as a user
+# AUTH_USER_MODEL = 'base.User'
 
 # Application definition
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'droid.base',
+    # 'droid.base',
     'droid.api',
     'rest_framework',
     'rest_framework.authtoken',
