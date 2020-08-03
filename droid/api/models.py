@@ -12,9 +12,9 @@ class Anunciante(models.Model):
     """
     This class contains the representation of the fields in the Anunciante table.
     """
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, unique=True)
 
     created = models.DateTimeField('Created in', auto_now_add=True)
     modified = models.DateTimeField('Modified in', auto_now=True)
@@ -26,7 +26,7 @@ class Anunciante(models.Model):
 
     def __str__(self):
         """A string representation of the model."""
-        return str(self.name)
+        return f'{self.user.username}'
 
 
 class DemandaDePecas(models.Model):
