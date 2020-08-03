@@ -11,8 +11,8 @@ class AnuncianteAdmin(admin.ModelAdmin):
         list_filter - Fields to be filtered
     """
 
-    list_display = ('name', 'phone_number', 'email', 'created', 'modified')
-    search_fields = ['name', 'phone_number', 'email']
+    list_display = ('user', 'phone_number', 'email', 'created', 'modified')
+    search_fields = ['user', 'phone_number', 'email']
     ordering = ('-created',)
 
 

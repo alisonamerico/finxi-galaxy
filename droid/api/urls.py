@@ -8,6 +8,6 @@ app_name = 'api'
 router = routers.DefaultRouter(trailing_slash=True)
 
 router.register('anunciante', AnuncianteViewSet)
-router.register('demanda_peca', DemandaDePecasViewSet)
+router.register('demanda-peca', DemandaDePecasViewSet)
 
 urlpatterns = router.urls
